@@ -1,0 +1,23 @@
+<h1 class="text-center">Results</h1>
+
+<hr>
+  <h3 class="text-center">Your Grid:</h3>
+  <div class="letters">
+    <% @grid.each do |letter|  %>
+      <div class="new_letter">
+        <li>
+          <%=letter%>
+        </li>
+      </div>  
+    <% end %>
+   </div>
+  <h3 class="text-center">Your Guess: <%= @word %></h3>
+
+<hr>
+<h3 class="text-center"><%= @message.capitalize %></h3> 
+<h4 class="text-center">Your Current Score = <%= @current %></h4>
+<h4 class="text-center">Your Total Score = <%= @score %></h4> 
+<hr>
+<div class="text-center">
+  <%= link_to "Play Again", new_path, class: "btn btn-primary" %>
+</div>

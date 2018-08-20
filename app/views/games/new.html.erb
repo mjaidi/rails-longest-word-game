@@ -1,0 +1,27 @@
+<h1 class="text-center">New Game</h1>
+
+<hr>
+
+<div class="letters">
+<% @letters.each do |letter|  %>
+  <div class="new_letter">
+    <li>
+      <%=letter%>
+    </li>
+  </div>  
+<% end %>
+</div>
+
+<hr>
+
+<div class="playing text-center">
+  <h3>Your Best Guess</h3>
+  <form action="/score" method="post" class="form-inline">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag 'grid', @letters %>
+  <div class="form-group">   
+    <input type="text" name="word" placeholder="word" class = "form-control">
+  </div>
+  <input type="submit" value = "Guess" class = "btn btn-primary">
+</form>
+</div>
